@@ -54,31 +54,37 @@ matrix:
   include:
     # Linux {
 
-    - os: linux
-      env: CONFIG=Release TOOLCHAIN=libcxx-fpic-hid-sections INSTALL=--strip
+#     - os: linux
+#       env: CONFIG=Release TOOLCHAIN=libcxx-fpic-hid-sections INSTALL=--strip
 
-    - os: linux
-      env: CONFIG=Release TOOLCHAIN=gcc-5-pic-hid-sections-lto INSTALL=--strip
+#     - os: linux
+#       env: CONFIG=Release TOOLCHAIN=gcc-5-pic-hid-sections-lto INSTALL=--strip
 
     # }
 
     # OSX {
 
-    - os: osx
-      osx_image: xcode8.3
-      env: CONFIG=Release TOOLCHAIN=osx-10-12-hid-sections INSTALL=--install
+#     - os: osx
+#       osx_image: xcode8.3
+#       env: CONFIG=Release TOOLCHAIN=osx-10-12-hid-sections INSTALL=--install
 
-    - os: osx
-      osx_image: xcode8.3
-      env: CONFIG=MinSizeRel TOOLCHAIN=ios-nocodesign-10-3-arm64-dep-9-0-device-libcxx-hid-sections INSTALL=--install
+#     - os: osx
+#       osx_image: xcode8.3
+#       env: CONFIG=MinSizeRel TOOLCHAIN=ios-nocodesign-10-3-arm64-dep-9-0-device-libcxx-hid-sections INSTALL=--install
 
-    - os: osx
-      osx_image: xcode8.3
-      env: CONFIG=Release TOOLCHAIN=osx-10-12-sanitize-address-hid-sections INSTALL=--install
+#     - os: osx
+#       osx_image: xcode8.3
+#       env: CONFIG=Release TOOLCHAIN=osx-10-12-sanitize-address-hid-sections INSTALL=--install
 
-    - os: osx
-      env: CONFIG=MinSizeRel TOOLCHAIN=android-ndk-r10e-api-19-armeabi-v7a-neon-hid-sections INSTALL=--strip
+#     - os: osx
+#       env: CONFIG=MinSizeRel TOOLCHAIN=android-ndk-r10e-api-19-armeabi-v7a-neon-hid-sections INSTALL=--strip
 
+      - os: osx
+        osx_image: xcode9.3
+        env: >
+          TOOLCHAIN=libcxx
+          CONFIG=Release
+          INSTALL=--strip
     # }
 
 # disable the default submodule logic to support local modification of .gitmodules paths
