@@ -173,6 +173,10 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 ## Version check ###
 ####################
 
+hunter_add_package(android_arm64_v8a_system_image_packer)
+
+return()
+
 hunter_add_package(check_ci_tag)
 find_package(check_ci_tag CONFIG REQUIRED)
 check_ci_tag()
