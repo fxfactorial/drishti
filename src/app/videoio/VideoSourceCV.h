@@ -71,6 +71,7 @@ public:
     virtual void setOutputFormat(PixelFormat) {}
 
     static std::shared_ptr<VideoSourceCV> create(const std::string& filename);
+    static std::shared_ptr<VideoSourceCV> createCV(const std::string& filename);
 
 protected:
 };

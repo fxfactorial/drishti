@@ -317,7 +317,7 @@ int gauze_main(int argc, char** argv)
     CV_Assert(!glewInit());
 #endif
 
-    auto video = drishti::videoio::VideoSourceCV::create(sInput);
+    auto video = drishti::videoio::VideoSourceCV::createCV(sInput);
     video->setOutputFormat(drishti::videoio::VideoSourceCV::ARGB); // be explicit, fail on error
 
     // Retrieve first frame to configure sensor parameters:
@@ -350,7 +350,7 @@ int gauze_main(int argc, char** argv)
     settings.renderEyesWidthRatio = 0.25f * opengl->getGeometry().sx; // *** rendering ***
     settings.doSingleFace = true;
     settings.doOptimizedPipeline = !doCpu;
-    
+ 
     // The following parameters are set directly through the command line parser:
     //
     //  settings.minDetectionDistance = ...;
@@ -462,7 +462,7 @@ int gauze_main(int argc, char** argv)
 #endif            
             timer.reset(); // reset timer
         }
-        
+
         logger->info("fps: {}", (++timer).fps());
         
         counter++;
